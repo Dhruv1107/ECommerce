@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-md-3" *ngFor = "let data of dataList ; let i = index">
+        <div class="card row">
+            <div class="card-header">{{data.title}}</div>
+            <div>
+            <img src="{{data.imageUrl}}" class="card-img-top"> 
+            </div>
+            <div>
+            <div class="form-check float-left mt-2 ml-1">
+            <input type="checkbox" class="form-check-input" (click)="openSnackBar('Compare' ,data)">Add to Compare
+            </div>
+            <button class="btn btn-success float-right" (click)="onClick(data , i)" [disabled] = "data.addedToCart">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

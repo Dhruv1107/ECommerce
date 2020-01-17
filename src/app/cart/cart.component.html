@@ -1,0 +1,24 @@
+<div *ngIf = "cartItems.length>0 ; else emptyCart" >
+    <h1 style = "text-align: center">Cart Items</h1>
+    <div class="col-md-6">
+    <div class="list-group " *ngFor = "let data of cartItems ; let i = index">
+        <a class="list-group-item " (click)="onClick(data)">
+            <div class="float-left">
+            <h4 class="list-group-heading">{{data.name}}</h4>
+            </div>
+            <div class="float-right">
+                <button type="button" class="close" (click)="onClick(i,data)"> 
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <img src="{{data.imageUrl}}" class="img-responsive" style="max-height: 50px">
+            </div>
+        </a>
+    </div>    
+</div>
+</div>
+
+<ng-template #emptyCart>
+    <h1 style = "text-align: center">No Items in cart</h1>
+</ng-template>
+
+

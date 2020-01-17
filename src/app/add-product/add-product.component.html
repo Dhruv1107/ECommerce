@@ -1,0 +1,21 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+    <input formControlName="title" placeholder="Title">
+    </div>
+   
+    <div>
+    <input formControlName="price" placeholder="Price">
+</div>
+    
+<div>
+    <input formControlName="description" placeholder="description">
+</div>
+<div>
+    <input formControlName="imageUrl" placeholder="imageUrl">
+</div>
+    
+  
+    <button type="submit" [disabled]="myForm.invalid">
+      Send
+    </button>
+  </form>
